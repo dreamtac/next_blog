@@ -51,14 +51,14 @@ export default function HeaderComponent() {
 
             {/* 사이드바 */}
             <div
-                className={`fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg h-full p-4 flex flex-col items-center border-r border-gray-400 transform transition-transform duration-300 ${
+                className={`fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg h-full py-4 px-5 flex flex-col items-start border-r border-gray-400 transform transition-transform duration-300 ${
                     sideBarOpen ? 'translate-x-0' : '-translate-x-full'
-                }`}
+                } *:text-black`}
             >
                 <button onClick={() => setSideBarOpen(false)} className="mb-4">
                     ✕ 닫기
                 </button>
-                <ul className="space-y-4 text-center">
+                <ul className="space-y-4">
                     <li>전체 글 보기</li>
                     <li>일상</li>
                     <li>코딩 공부</li>
