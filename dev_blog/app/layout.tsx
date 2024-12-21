@@ -25,10 +25,11 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex justify-center flex-col`}>
+            <body
+                className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col justify-center items-center bg-white`}
+            >
                 <HeaderComponent />
-
-                {children}
+                <div className="w-full max-w-screen-xl mx-auto">{children}</div>
             </body>
         </html>
     );

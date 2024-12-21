@@ -11,7 +11,7 @@ export default function HeaderComponent() {
     return (
         <>
             {/* 헤더 영역 */}
-            <div className="flex flex-row max-w-screen-xl w-full bg-white items-center justify-between px-4 mx-auto py-4 border-b border-black">
+            <div className="flex flex-row w-full bg-white items-center justify-between px-4 mx-auto py-4 border-b border-black">
                 {/* 모바일용 서랍 아이콘 */}
                 <button onClick={() => setSideBarOpen(true)} className="md:hidden text-black">
                     <svg
@@ -31,7 +31,7 @@ export default function HeaderComponent() {
                 </button>
 
                 {/* 로고 */}
-                <Link href={'/'}>
+                <Link href={'/blog/all'}>
                     <Image src={logo} alt="logo" className="h-14 md:h-16 lg:h-16 xl:h-20 w-auto" />
                 </Link>
 
