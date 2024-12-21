@@ -59,11 +59,11 @@ export default function HeaderComponent() {
                     ✕ 닫기
                 </button>
                 <ul className="space-y-4">
-                    <li>전체 글 보기</li>
-                    <li>일상</li>
-                    <li>코딩 공부</li>
-                    <li>포트폴리오</li>
-                    <li>etc...</li>
+                    <li>All</li>
+                    <li>Daily</li>
+                    <li>Coding</li>
+                    <li>Projects</li>
+                    <li>etc</li>
                 </ul>
             </div>
         </>
