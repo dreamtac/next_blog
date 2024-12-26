@@ -29,6 +29,7 @@ export default function RootLayout({
                 className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col justify-center items-center bg-white`}
             >
                 <HeaderComponent />
+                {/* <NavBar categoryParam="" /> */}
                 <div className="w-full max-w-screen-xl mx-auto">{children}</div>
             </body>
         </html>

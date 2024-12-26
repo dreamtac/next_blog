@@ -7,6 +7,9 @@ interface Props {
 }
 
 export default function NavBar({ categoryParam }: Props) {
+    if (categoryParam === '') {
+        categoryParam = 'all';
+    }
     const categories = ['All', 'Daily', 'Coding', 'Projects', 'etc'];
     // const [currentCategory, setCurrentCategory] = useState('All');
 
