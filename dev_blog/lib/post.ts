@@ -36,14 +36,15 @@
 
 // }
 
+import { Post } from '@/types';
 import { readdir } from 'fs/promises';
 import path from 'path';
 
-interface Post {
-    slug: string;
-    title: string;
-    publishDate: string;
-}
+// interface Post {
+//     slug: string;
+//     title: string;
+//     publishDate: string;
+// }
 
 export async function getPosts(): Promise<Post[]> {
     const postDir = path.join(process.cwd(), 'app', '(posts)');

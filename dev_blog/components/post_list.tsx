@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export function PostList({ posts }: { posts: Post[] }) {
     return (
-        <ol>
+        <ol className="text-black">
             {posts.map(({ slug, title, publishDate, categories }) => (
                 <li key={slug}>
                     <h2>
