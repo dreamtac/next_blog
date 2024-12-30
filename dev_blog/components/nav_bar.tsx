@@ -19,8 +19,8 @@ export default function NavBar({ categoryParam }: Props) {
                 <Link
                     key={category}
                     // href={'/blog'}
-                    href={`/blog/${category.toLowerCase()}`}
-                    className={`font-semibold border border-black px-3 py-1 rounded-md ${
+                    href={category.toLowerCase() === 'all' ? '/blog' : `/blog/${category.toLowerCase()}`}
+                    className={`font-semibold border border-black px-3 py-1 rounded-md no-underline ${
                         categoryParam === category.toLowerCase() ? 'bg-black text-white' : ''
                     }`}
                     onClick={() => {
