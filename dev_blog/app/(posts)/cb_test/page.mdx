@@ -1,0 +1,28 @@
+export const metadata = {
+    title: '코드블럭 테스트',
+    description: '코드블럭 테스트용 포스트',
+    publishDate: '2024-12-31T00:00:00Z',
+    categories: ['Coding'],
+};
+
+#### 환영
+
+안녕하세요. 이 글은 mdx파일로 작성되었습니다.
+
+```tsx title="Title" showLineNumbers {3}
+import NavBar from '@/components/nav_bar';
+import { PostList } from '@/components/post_list';
+import { getPosts } from '@/lib/post';
+
+export default async function BlogHome() {
+    const posts = await getPosts('all');
+    return (
+        <div>
+            <NavBar categoryParam="" />
+            {/* <First /> */}
+            <PostList posts={posts} />
+        </div>
+    );
+    // return redirect('/blog/all');
+}
+```
