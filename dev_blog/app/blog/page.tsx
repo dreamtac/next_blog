@@ -5,11 +5,9 @@ import { getPosts } from '@/lib/post';
 export default async function BlogHome() {
     const posts = await getPosts('all');
     return (
-        <div>
+        <div className="w-full">
             <NavBar categoryParam="" />
-            {/* <First /> */}
             <PostList posts={posts} />
         </div>
     );
-    // return redirect('/blog/all');
 }

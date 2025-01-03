@@ -11,7 +11,7 @@ export default function HeaderComponent() {
     return (
         <>
             {/* 헤더 영역 */}
-            <div className="flex flex-row w-full bg-white items-center justify-between px-4 mx-auto py-4 border-b border-black">
+            <div className="flex flex-row w-full bg-white items-center justify-between px-4 mx-auto py-4 border-b border-black mb-4">
                 {/* 모바일용 서랍 아이콘 */}
                 <button onClick={() => setSideBarOpen(true)} className="md:hidden text-black">
                     <svg
