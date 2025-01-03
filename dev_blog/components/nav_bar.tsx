@@ -14,7 +14,7 @@ export default function NavBar({ categoryParam }: Props) {
     // const [currentCategory, setCurrentCategory] = useState('All');
 
     return (
-        <div className="bg-white text-black gap-12 p-4 items-center justify-center hidden md:flex">
+        <div className="bg-white text-black gap-12 p-4 items-center justify-center hidden sm:flex">
             {categories.map(category => (
                 <Link
                     key={category}
