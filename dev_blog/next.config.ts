@@ -2,18 +2,23 @@ import nextMDX from '@next/mdx';
 import type { NextConfig } from 'next';
 import rehypePrettyCode from 'rehype-pretty-code';
 
-/** @type {import('rehype-pretty-code').Options} */
-const options = {
+const rehypePrettyCodeOptions = {
     // See Options section below.
-    keepBackground: false,
-    theme: 'rose-pine',
+    keepBackground: true,
+    theme: 'min-dark',
+    // transformers: [
+    //     transformerCopyButton({
+    //         visibility: 'always',
+    //         feedbackDuration: 3000,
+    //     }),
+    // ],
 };
 
 const withMDX = nextMDX({
     extension: /\.mdx?$/,
     options: {
         remarkPlugins: [],
-        rehypePlugins: [[rehypePrettyCode, options]],
+        rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeOptions]],
     },
 });
 

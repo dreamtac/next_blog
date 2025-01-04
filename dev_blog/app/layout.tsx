@@ -28,7 +28,7 @@ export default function RootLayout({
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased flex items-center justify-center bg-white h-full`}
             >
-                <div className="flex flex-col items-center justify-center w-full max-w-screen-xl">
+                <div className="flex flex-col items-center justify-center w-full max-w-screen-xl text-black">
                     <HeaderComponent />
                     <div className="w-full px-4">{children}</div>
                 </div>
