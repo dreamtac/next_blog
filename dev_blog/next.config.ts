@@ -1,6 +1,7 @@
 import nextMDX from '@next/mdx';
 import type { NextConfig } from 'next';
 import rehypePrettyCode from 'rehype-pretty-code';
+import rehypeSlug from 'rehype-slug';
 
 const rehypePrettyCodeOptions = {
     // See Options section below.
@@ -18,7 +19,7 @@ const withMDX = nextMDX({
     extension: /\.mdx?$/,
     options: {
         remarkPlugins: [],
-        rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeOptions]],
+        rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeOptions], rehypeSlug],
     },
 });
 

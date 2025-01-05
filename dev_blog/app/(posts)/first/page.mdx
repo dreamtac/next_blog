@@ -1,3 +1,6 @@
+import image01 from '/public/apart.jpeg';
+import Image from 'next/image';
+
 export const metadata = {
     title: 'first',
     description: 'Hello World Page',
@@ -7,12 +10,22 @@ export const metadata = {
 
 # Welcome to my MDX page!
 
+## 제목 h2
+
 This is some **bold** and _italics_ text.
 
+## 제목 h2_1
+
 This is a list in markdown:
+
+### 리스트 h3
 
 -   One
 -   Two
 -   Three
 
 Checkout my React component:
+
+<Image src={image01} alt="test" />
+
+![test](apart.jpeg)
