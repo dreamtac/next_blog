@@ -31,15 +31,17 @@ const Toc = () => {
     }, []);
 
     return (
-        <ul>
-            {elements.map(el => (
-                <li key={el.id}>
-                    <a href={`#${el.id}`} className={activeId === el.id ? 'text-red-500' : ''}>
-                        {el.textContent}
-                    </a>
-                </li>
-            ))}
-        </ul>
+        <div className="hidden lg:block lg:fixed top-1/4 right-5 w-48 overflow-y-auto bg-gray-100 border border-gray-300 rounded-lg">
+            <ul>
+                {elements.map(el => (
+                    <li key={el.id}>
+                        <a href={`#${el.id}`} className={activeId === el.id ? 'text-red-500' : ''}>
+                            {el.textContent}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </div>
     );
 };
 
