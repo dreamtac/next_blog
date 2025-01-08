@@ -4,21 +4,25 @@ import { useEffect, useState } from 'react';
 
 const Toc = () => {
     const [activeId, setActiveId] = useState<string | null>(null);
+    const [elements, setElements] = useState<Element[]>([]);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
             entries => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        console.log(entry.target.id);
                         setActiveId(entry.target.id);
                     }
                 });
             },
-            { rootMargin: '0% 0% -80% 0%' }
+            {
+                rootMargin: '0% 0% -90% 0%', // 하단 마진을 조금 더 줄임
+                threshold: 0.1, // 요소가 뷰포트의 10%에 진입할 때 활성화
+            }
         );
 
-        const elements = document.querySelectorAll('h2, h3');
+        const elements = Array.from(document.querySelectorAll('h2, h3'));
+        setElements(elements);
         elements.forEach(el => observer.observe(el));
 
         return () => {
@@ -27,22 +31,15 @@ const Toc = () => {
     }, []);
 
     return (
-        <nav>
-            <ul>
-                <li className={activeId === 'section1' ? 'active' : ''}>
-                    <a href="#section1">Section 1</a>
+        <ul>
+            {elements.map(el => (
+                <li key={el.id}>
+                    <a href={`#${el.id}`} className={activeId === el.id ? 'text-red-500' : ''}>
+                        {el.textContent}
+                    </a>
                 </li>
-                <li className={activeId === 'section2' ? 'active' : ''}>
-                    <a href="#section2">Section 2</a>
-                </li>
-                {/* Add more sections as needed */}
-            </ul>
-            <style jsx>{`
-                .active {
-                    font-weight: bold;
-                }
-            `}</style>
-        </nav>
+            ))}
+        </ul>
     );
 };
 
