@@ -31,7 +31,7 @@ const Toc = () => {
     }, []);
 
     return (
-        <div className="hidden lg:block lg:fixed top-1/4 right-5 w-48 overflow-y-auto bg-gray-100 border border-gray-300 rounded-lg">
+        <div className="sticky top-20 w-48 ml-8 max-h-[80vh] overflow-y-auto px-3 py-2 bg-gray-100 border border-gray-300 rounded-lg shadow">
             <ul>
                 {elements.map(el => (
                     <li key={el.id}>
