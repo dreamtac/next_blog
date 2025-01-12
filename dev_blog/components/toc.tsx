@@ -26,12 +26,14 @@ const Toc = () => {
         elements.forEach(el => observer.observe(el));
 
         return () => {
-            elements.forEach(el => observer.unobserve(el));
+            elements.forEach(el => {
+                observer.unobserve(el);
+            });
         };
     }, []);
 
     return (
-        <div className="sticky top-20 w-48 ml-8 max-h-[80vh] overflow-y-auto px-3 py-2 bg-gray-100 border border-gray-300 rounded-lg shadow">
+        <div className="sticky top-1/3 w-48 ml-8 max-h-[80vh] overflow-y-auto px-3 py-2 bg-gray-100 border border-gray-300 rounded-lg shadow">
             <ul>
                 {elements.map(el => (
                     <li key={el.id}>

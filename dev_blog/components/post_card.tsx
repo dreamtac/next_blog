@@ -5,7 +5,7 @@ import logo from '../public/logo.png';
 
 export default function PostCard({ post }: { post: Post }) {
     return (
-        <Link href={`/${post.slug}`}>
+        <Link href={`/blog/${post.slug}`}>
             <div className="square border border-gray-200 p-4 mb-4">
                 <div className="h-20 mb-4 relative">
                     <Image src={logo} alt="image" fill className="object-cover" />
