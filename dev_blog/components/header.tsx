@@ -2,11 +2,13 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useParams } from 'next/navigation';
 import { useState } from 'react';
 import logo from '../public/logo.png';
 
 export default function HeaderComponent() {
     const [sideBarOpen, setSideBarOpen] = useState(false);
+    const { category } = useParams();
 
     return (
         <>
@@ -59,11 +61,21 @@ export default function HeaderComponent() {
                     ✕ 닫기
                 </button>
                 <ul className="space-y-4">
-                    <li>All</li>
-                    <li>Daily</li>
-                    <li>Coding</li>
-                    <li>Projects</li>
-                    <li>etc</li>
+                    <Link href={'/blog/all'}>
+                        <li className={category === `all` ? 'font-semibold text-red-500' : ''}>All</li>
+                    </Link>
+                    <Link href={'/blog/daily'}>
+                        <li className={category === `daily` ? 'font-semibold text-red-500' : ''}>Daily</li>
+                    </Link>
+                    <Link href={'/blog/coding'}>
+                        <li className={category === `coding` ? 'font-semibold text-red-500' : ''}>Coding</li>
+                    </Link>
+                    <Link href={'/blog/projects'}>
+                        <li className={category === `projects` ? 'font-semibold text-red-500' : ''}>Projects</li>
+                    </Link>
+                    <Link href={'/blog/etc'}>
+                        <li className={category === `etc` ? 'font-semibold text-red-500' : ''}>etc</li>
+                    </Link>
                 </ul>
             </div>
         </>
