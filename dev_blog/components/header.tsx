@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useState } from 'react';
 import logo from '../public/logo.png';
+import DarkModeToggle from './dark_mode_toggle';
 
 export default function HeaderComponent() {
     const [sideBarOpen, setSideBarOpen] = useState(false);
@@ -32,6 +33,8 @@ export default function HeaderComponent() {
                     </svg>
                 </button>
 
+                {/* 다크모드 토글 */}
+                <DarkModeToggle />
                 {/* 로고 */}
                 <Link href={'/blog/all'}>
                     <Image src={logo} alt="logo" className="h-14 md:h-16 lg:h-16 xl:h-20 w-auto" />
