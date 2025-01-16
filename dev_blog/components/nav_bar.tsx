@@ -14,14 +14,16 @@ export default function NavBar({ categoryParam }: Props) {
     // const [currentCategory, setCurrentCategory] = useState('All');
 
     return (
-        <div className="bg-white text-black gap-12 p-4 items-center justify-center hidden sm:flex">
+        <div className="bg-white text-black gap-12 p-4 pb-6 items-center justify-center hidden sm:flex dark:bg-slate-900 dark:text-slate-300">
             {categories.map(category => (
                 <Link
                     key={category}
                     // href={'/blog'}
-                    href={category.toLowerCase() === 'all' ? '/blog' : `/blog/${category.toLowerCase()}`}
-                    className={`font-semibold border border-black px-3 py-1 rounded-md no-underline ${
-                        categoryParam === category.toLowerCase() ? 'bg-black text-white' : ''
+                    href={category.toLowerCase() === 'all' ? '/blog/all' : `/blog/${category.toLowerCase()}`}
+                    className={`font-semibold border border-black dark:border-slate-300 px-3 py-1 rounded-md no-underline ${
+                        categoryParam === category.toLowerCase()
+                            ? 'bg-black text-white dark:bg-slate-300 dark:slate-900'
+                            : ''
                     }`}
                     onClick={() => {
                         // setCurrentCategory(category);

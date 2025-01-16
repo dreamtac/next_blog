@@ -91,7 +91,7 @@ body {
 
 /* 다크 모드 스타일 */
 .dark body {
-    @apply bg-gray-900 text-white;
+    @apply bg-gray-900 text-slate-300;
 }
 
 body {
