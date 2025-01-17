@@ -23,7 +23,7 @@ export default function HeaderComponent() {
                         viewBox="0 0 24 24"
                         strokeWidth="1.5"
                         stroke="currentColor"
-                        className="w-6 h-6"
+                        className="w-6 h-6 dark:text-text-dark"
                     >
                         <path
                             strokeLinecap="round"
@@ -33,20 +33,21 @@ export default function HeaderComponent() {
                     </svg>
                 </button>
 
-                {/* 다크모드 토글 */}
-                <DarkModeToggle />
                 {/* 로고 */}
                 <Link href={'/blog/all'}>
                     <Image src={logo} alt="logo" className="h-14 md:h-16 lg:h-16 xl:h-20 w-auto" />
                 </Link>
 
-                {/* 검색 폼 */}
+                {/* 다크모드 토글 */}
+                <DarkModeToggle />
+
+                {/* 검색 폼
                 <div className="hidden md:flex">
                     <form action="" className="flex flex-row gap-4">
                         <input type="text" placeholder="Search" className="border border-black text-black px-2" />
                         <button className="border border-black text-black">검색</button>
                     </form>
-                </div>
+                </div> */}
             </div>
 
             {/* 오버레이 */}

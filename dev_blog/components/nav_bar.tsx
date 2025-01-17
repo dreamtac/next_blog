@@ -21,13 +21,8 @@ export default function NavBar({ categoryParam }: Props) {
                     // href={'/blog'}
                     href={category.toLowerCase() === 'all' ? '/blog/all' : `/blog/${category.toLowerCase()}`}
                     className={`font-semibold border border-black dark:border-slate-300 px-3 py-1 rounded-md no-underline ${
-                        categoryParam === category.toLowerCase()
-                            ? 'bg-black text-white dark:bg-slate-300 dark:slate-900'
-                            : ''
+                        categoryParam === category.toLowerCase() ? 'bg-black text-white dark:bg-gray-400' : ''
                     }`}
-                    onClick={() => {
-                        // setCurrentCategory(category);
-                    }}
                 >
                     {category}
                 </Link>
