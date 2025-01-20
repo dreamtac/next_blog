@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useState } from 'react';
-import logo from '../public/logo.png';
+import logo from '../public/logo.webp';
 import DarkModeToggle from './dark_mode_toggle';
 
 export default function HeaderComponent() {
@@ -35,7 +35,7 @@ export default function HeaderComponent() {
 
                 {/* 로고 */}
                 <Link href={'/blog/all'}>
-                    <Image src={logo} alt="logo" className="h-14 md:h-16 lg:h-16 xl:h-20 w-auto" />
+                    <Image src={logo} alt="logo" className="h-28 md:h-32 lg:h-36 xl:h-36 w-auto" />
                 </Link>
 
                 {/* 다크모드 토글 */}
