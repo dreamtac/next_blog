@@ -15,28 +15,30 @@ export default function HeaderComponent() {
         <>
             {/* 헤더 영역 */}
             <div className="flex flex-row w-full bg-white dark:bg-slate-700 dark:text-slate-300 items-center justify-between px-4 mx-auto py-4 border-b border-black mb-4">
-                {/* 모바일용 서랍 아이콘 */}
-                <button onClick={() => setSideBarOpen(true)} className="md:hidden text-black">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth="1.5"
-                        stroke="currentColor"
-                        className="w-6 h-6 dark:text-text-dark"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M3.75 5.25h16.5M3.75 12h16.5M3.75 18.75h16.5"
-                        />
-                    </svg>
-                </button>
+                <div className="flex gap-4">
+                    {/* 모바일용 서랍 아이콘 */}
+                    <button onClick={() => setSideBarOpen(true)} className="sm:hidden text-black">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth="1.5"
+                            stroke="currentColor"
+                            className="w-6 h-6 dark:text-text-dark"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M3.75 5.25h16.5M3.75 12h16.5M3.75 18.75h16.5"
+                            />
+                        </svg>
+                    </button>
 
-                {/* 로고 */}
-                <Link href={'/blog/all'}>
-                    <Image src={logo} alt="logo" className="h-28 md:h-32 lg:h-36 xl:h-36 w-auto" />
-                </Link>
+                    {/* 로고 */}
+                    <Link href={'/blog/all'}>
+                        <Image src={logo} alt="logo" className="h-10 md:h-14 w-auto" />
+                    </Link>
+                </div>
 
                 {/* 다크모드 토글 */}
                 <DarkModeToggle />
