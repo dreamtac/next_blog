@@ -1,0 +1,48 @@
+import PostTitle from '@/components/post_title';
+
+export const metadata = {
+    title: 'React UseState란?',
+    description: 'useState 함수를 이용한 상태관리',
+    publishDate: '2025-01-23',
+    categories: ['Coding'],
+};
+
+<PostTitle title={metadata.title} date={metadata.publishDate} />
+
+플러터와 마찬가지로 리액트도 useState함수를 이용한 상태관리(값이 변하면 새로 렌더링)가 가능하다.
+
+```js title:"index.html" hl:16-27
+<!DOCTYPE html>
+<html lang="kor">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>react</title>
+    </head>
+    <body>
+        <div id="root"></div>
+    </body>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const root = document.getElementById('root');
+        const App = () => {
+            const [count, countUp] = React.useState(0);
+            const onClick = () => {
+                countUp(count + 1);
+            };
+            return (
+                <div>
+                    <h3>Total clicks: {count}</h3>
+                    <button onClick={onClick}>Click me</button>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<App />, root);
+    </script>
+</html>
+```
+
+### 주의
